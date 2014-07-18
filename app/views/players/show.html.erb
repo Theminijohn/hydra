@@ -5,25 +5,7 @@
   <%= @player.name %>
 </p>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
-
-<script type="text/jsx">
-  /** @jsx React.DOM */
-
-  var InterfaceComponent = React.createClass({
-    render: function(){
-      return <div>Hello {this.props.name}! </div>
-    }
-  });
-
-  React.renderComponent(
-    <InterfaceComponent name="John",
-    document.body
-  );
-
-
-</script>
+<div id="react-container"></div>
 
 
 <!--
@@ -37,5 +19,7 @@ like onClick and onChange.
 
 the onChange event is triggered when the element’s value changes. This differs
 from some browsers which need the element to blur before onChange is triggered.
+
+To make a property required, append .isRequired to the type.
 
  -->
