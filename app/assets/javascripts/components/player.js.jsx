@@ -12,8 +12,17 @@
       }
     },
 
+    // Setting || Updating a State
+    // Setting state should only be done from inside the component.
+    // As mentioned, state should be treated as private data.
+    handleClick: function() {
+      this.setState({
+        name: 'John'
+      })
+    },
+
     render: function(){
-      return <div>
+      return <div onClick={this.handleClick}>
         Hello, my name is  <b>{this.state.name}</b> and i work as a <b>{this.state.job}</b>!
       </div>
     }
