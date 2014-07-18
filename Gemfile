@@ -17,8 +17,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'smarter_csv', '~> 1.0.17'
 gem 'ruby-progressbar', '~> 1.5.1'
 
-# Backbone
+# Learn
 gem 'backbone-on-rails'
+gem 'react-rails', '~> 0.10.0.0'
 
 group :development, :test do
   gem 'spring'
