@@ -1,1 +1,1 @@
-json.extract! @player, :id, :name, :created_at, :updated_at
+json.extract! @player, :grepo_id, :name, :alliance_id, :points, :rank, :town_count

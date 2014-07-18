@@ -4,8 +4,7 @@ class Hydra.Routers.Players extends Backbone.Router
     'players/:id': 'show'
 
   index: ->
-    view = new Hydra.Views.PlayersIndex()
-    $('#container').html(view.render().el)
+    console.log "Players Index View"
 
   show: (id) ->
     alert "Showing Player with id #{id}"

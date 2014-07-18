@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718142258) do
+ActiveRecord::Schema.define(version: 20140718143354) do
 
   create_table "players", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "grepo_id"
+    t.integer  "alliance_id"
+    t.integer  "points"
+    t.integer  "rank"
+    t.integer  "town_count"
   end
+
+  add_index "players", ["alliance_id"], name: "index_players_on_alliance_id"
+  add_index "players", ["grepo_id"], name: "index_players_on_grepo_id"
+  add_index "players", ["points"], name: "index_players_on_points"
+  add_index "players", ["rank"], name: "index_players_on_rank"
+  add_index "players", ["town_count"], name: "index_players_on_town_count"
 
 end

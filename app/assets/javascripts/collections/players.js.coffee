@@ -1,5 +1,5 @@
 class Hydra.Collections.Players extends Backbone.Collection
 
-  url: '/api/players'
+  url: '/players'
   model: Hydra.Models.Player
 
