@@ -1,16 +1,25 @@
 /** @jsx React.DOM */
 
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
+  var InterfaceComponent = React.createClass({
 
-React.renderComponent(
-  <CommentBox />,
-  document.getElementById('content')
-);
+    // This method (State) tells the component which values should be available from the
+    // first render cycle, until the state values are changed. You should never
+    // try to use state values without first declaring them in this manner.
+    getInitialState: function() {
+      return {
+        name: 'Chris',
+        job: 'developer'
+      }
+    },
+
+    render: function(){
+      return <div>
+        Hello, my name is  <b>{this.state.name}</b> and i work as a <b>{this.state.job}</b>!
+      </div>
+    }
+  });
+
+  React.renderComponent(
+    <InterfaceComponent />,
+    document.getElementById('player-container')
+  );
