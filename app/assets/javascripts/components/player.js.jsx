@@ -17,7 +17,8 @@
     // As mentioned, state should be treated as private data.
     handleClick: function() {
       this.setState({
-        name: 'John'
+        name: 'John',
+        job: 'Construction Worker'
       })
     },
 
@@ -29,6 +30,6 @@
   });
 
   React.renderComponent(
-    <InterfaceComponent />,
+    <InterfaceComponent/>,
     document.getElementById('player-container')
   );
