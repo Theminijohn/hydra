@@ -29,7 +29,33 @@
     }
   });
 
-  React.renderComponent(
-    <InterfaceComponent/>,
-    document.getElementById('player-container')
-  );
+React.renderComponent(
+  <InterfaceComponent/>,
+  document.getElementById('player-container')
+);
+
+
+
+//  Player Card Component
+var PlayerCard = React.createClass({
+  render : function() {
+    return (
+      <div className="card">
+        <div className="picture">
+          <img src={this.props.profile.get("picture")} />
+        </div>
+        <div className="name">
+          {this.props.profile.get("name")}
+          <small>
+            ({this.props.profile.get("gender")})
+          </small>
+        </div>
+      </div>
+    );
+  }
+});
+
+React.renderComponent(
+  <PlayerCard profile={profile}/>,
+  document.getElementById('card-container')
+);

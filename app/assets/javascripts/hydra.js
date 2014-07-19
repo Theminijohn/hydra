@@ -4,7 +4,8 @@ window.Hydra = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Hydra.Routers.Players();
+    Backbone.history.start({pushState: true});
   }
 };
 
