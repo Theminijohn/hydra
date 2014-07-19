@@ -38,94 +38,22 @@ React.renderComponent(
 
 //  Player Card Component
 var PlayerCard = React.createClass({
-        componentWillMount : function() {
-          profile.on("change", (function() {
-            this.forceUpdate();
-          }.bind(this)));
-        },
-        componentWillUnmount : function() {
-          profile.off("change");
-        },
-        render : function() {
-          return (
-            <div className="card">
-              <div className="picture">
-                <img src={this.props.profile.get("picture")} />
-              </div>
-              <div className="name">
-                {this.props.profile.get("name")}
-                <small>
-                  ({this.props.profile.get("gender")})
-                </small>
-              </div>
-            </div>
-          );
-        }
-      });
-
-      var connect = document.querySelector(".connect");
-      var target  = document.querySelector(".target");
-      var profile = new Hydra.Models.Player();
-
-      var fetchProfile = function() {
-        React.renderComponent(
-          <CardComponent profile={profile} />,
-          target
-        );
-
-        FB.api("/me", "get", {}, function(result) {
-          profile.set("name", result.name);
-          profile.set("gender", result.gender);
-        });
-
-        var params = "?redirect=false&width=200&height=200";
-
-        FB.api(
-          "/me/picture" + params,
-          "get",
-          {},
-          function(result) {
-            profile.set("picture", result.data.url);
-          }
-        );
-      };
-
-      var login = function() {
-        FB.login(function() {
-          fetchProfile();
-        });
-      };
-
-      window.fbAsyncInit = function() {
-
-        FB.init({
-          appId  : "1648014082089587",
-          status : true,
-          xfbml  : true
-        });
-
-        connect.addEventListener("click", function() {
-          login();
-        });
-
-        FB.Event.subscribe(
-          "auth.authResponseChange",
-          function(response) {
-            if (response.status === "connected") {
-              fetchProfile();
-            }
-          }
-        );
-
-      };
-
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, "script", "facebook-jssdk"));
+  render : function() {
+    return (
+      <div className="card">
+        <div className="picture">
+          <img src={this.props.profile.get("picture")} />
+        </div>
+        <div className="name">
+          {this.props.profile.get("name")}
+          <small>
+            ({this.props.profile.get("gender")})
+          </small>
+        </div>
+      </div>
+    );
+  }
+});
 
 React.renderComponent(
   <PlayerCard profile={profile}/>,

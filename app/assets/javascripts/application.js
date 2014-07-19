@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require nprogress
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require react
 //= require underscore
 //= require backbone
@@ -21,4 +25,14 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
+//= require turbolinks
 //= require_tree .
+
+NProgress.configure
+  showSpinner: true
+  ease: 'ease'
+  speed: 500
+
+$(document).on('page:fetch',   function() { NProgress.start(); });
+$(document).on('page:change',  function() { NProgress.done(); });
+$(document).on('page:restore', function() { NProgress.remove(); });

@@ -25,4 +25,3 @@ console.log(
   "gender  : " + profile.get("gender") + "\n" +
   "picture : " + profile.get("picture")
 );
-
