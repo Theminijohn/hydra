@@ -11,6 +11,9 @@ Hydra.Models.Player = Backbone.Model.extend({
 
 
 
+
+// Pass the Profile Model Instace to the PlayerCard Component class.
+// Then, inside the render() method, we use the same getters to populate a few simple components.
 var profile = new Hydra.Models.Player({
   name    : "Christopher Pitt",
   gender  : "male",
