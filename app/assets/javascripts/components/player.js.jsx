@@ -56,6 +56,6 @@ var PlayerCard = React.createClass({
 });
 
 React.renderComponent(
-  <PlayerCard profile={profile}/>,
+  <PlayerCard profile={profile}name/>,
   document.getElementById('card-container')
 );

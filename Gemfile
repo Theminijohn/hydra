@@ -26,11 +26,19 @@ gem 'backbone-on-rails'
 gem 'react-rails', '~> 0.10.0.0'
 gem 'nprogress-rails'
 
+# API
+# gem 'rocket_pants', '~> 1.10.0'
+gem 'grape', '~> 0.8.0'
+gem 'sentry-raven', '~> 0.4.0'
+gem 'grape-swagger'
+
 group :development, :test do
   gem 'spring'
   gem 'sqlite3'
   gem 'quiet_assets'
   gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'bullet'
   gem 'guard-livereload', require: false
   gem 'guard-rspec'
