@@ -2,13 +2,15 @@ Hydra.Models.Player = Backbone.Model.extend({
 
   // The Defaults for that Model
   defaults: {
-    name: 'Johnnie Walker',
-    gender: 'M',
-    picture: 'http://placekitten.com/200/200'
+    grepo_id: '',
+    name: '',
+    alliance_id: '',
+    points: '',
+    ranke: '',
+    town_count: ''
   }
 
 });
-
 
 
 
