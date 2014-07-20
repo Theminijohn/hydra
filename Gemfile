@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails', '~> 4.1.0.0'
+gem 'haml', '~> 4.0.5'
 
 # Importing
 gem 'smarter_csv', '~> 1.0.17'
