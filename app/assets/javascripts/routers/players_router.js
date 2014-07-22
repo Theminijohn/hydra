@@ -5,11 +5,16 @@ Hydra.Routers.Players = Backbone.Router.extend({
   },
 
   index: function() {
-    console.log("You are in 'Index")
+    console.log("You are in 'Index");
   },
 
-  show: function() {
-    console.log("You are in 'Show'")
+  show: function(id) {
+    window.player = new Hydra.Models.Player({id: id});
+    player.fetch();
+    React.renderComponent(
+      Hydra.React.PlayerCard({player: player}),
+      document.getElementById('card-container')
+    );
   }
 
 });

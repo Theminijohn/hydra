@@ -8,22 +8,21 @@ Hydra.Models.Player = Backbone.Model.extend({
     points: '',
     ranke: '',
     town_count: ''
-  }
+  },
 
+  urlRoot: '/api/v1/players/'
 });
-
 
 
 // Pass the Profile Model Instace to the PlayerCard Component class.
 // Then, inside the render() method, we use the same getters to populate a few simple components.
-var profile = new Hydra.Models.Player({
-  name    : "Christopher Pitt",
-  gender  : "male",
-  picture : "http://placekitten.com/200/200"
-});
+/*
+var player = new Hydra.Models.Player({id: this.id});
+player.fetch()
 
 console.log(
-  "name    : " + profile.get("name") + "\n" +
-  "gender  : " + profile.get("gender") + "\n" +
-  "picture : " + profile.get("picture")
+  "name    : " + player.get("name") + "\n" +
+  "grepo_id  : " + player.get("grepo_") + "\n" +
+  "points : " + player.get("picture")
 );
+*/

@@ -35,19 +35,24 @@ React.renderComponent(
 );
 
 
-
 //  Player Card Component
-var PlayerCard = React.createClass({
-  render : function() {
+Hydra.React.PlayerCard = React.createClass({
+  componentWillMount: function() {
+    this.props.player.bind('sync', _.bind(function() {
+      this.forceUpdate();
+    }, this));
+  },
+
+  render: function() {
     return (
       <div className="card">
         <div className="picture">
-          <img src={this.props.profile.get("picture")} />
+          <img src={this.props.player.get("grepo_id")} />
         </div>
         <div className="name">
-          {this.props.profile.get("name")}
+          {this.props.player.get("name")}
           <small>
-            ({this.props.profile.get("gender")})
+            ({this.props.player.get("gender")})
           </small>
         </div>
       </div>
@@ -55,7 +60,3 @@ var PlayerCard = React.createClass({
   }
 });
 
-React.renderComponent(
-  <PlayerCard profile={profile}name/>,
-  document.getElementById('card-container')
-);
